@@ -1,6 +1,9 @@
 import { canSSRauth } from "../../utils/canSSRAuth"
 import Head from "next/head"
 import { Header } from "../../components/ui/Header"
+import styles from './styles.module.scss'
+
+import {FiRefreshCcw} from 'react-icons/fi'
 
 
 export default function Dashboard(){
@@ -11,7 +14,29 @@ export default function Dashboard(){
     </Head>
         <div>
           <Header />
-          <h1>Painel</h1>
+          
+          <main className={styles.container}>
+
+              <div className={styles.containerHeader}>
+                  <h1>últimos pedidos</h1>
+                  <button>
+                    <FiRefreshCcw size={25} color="#3fffa3" />
+                  </button>
+              </div>
+
+              <article className={styles.listOrders}>
+
+                <section className={styles.orderItem}>
+                  <button>
+                    <div className={styles.tag}></div>
+                    <span>Mesa 30</span>
+                  </button>
+                </section>
+
+              </article>
+
+          </main>
+
         </div>
 
     </>
